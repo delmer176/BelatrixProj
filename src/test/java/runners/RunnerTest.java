@@ -8,10 +8,9 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features = "src/test/java/features/myFirstTest.feature"
 		,glue= {"steps"}
-		,tags={"@aliexpress"}
 		,plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber-json-report.json" }
 		)
 
-public class MyFirstRunner {
+public class RunnerTest {
 
 }

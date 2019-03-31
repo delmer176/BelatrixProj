@@ -1,0 +1,53 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 16,
+        "name": "Search a product in eBay",
+        "description": "",
+        "id": "search-product;search-a-product-in-ebay",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 18023157065,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I open \"https://www.ebay.com/\" in \"Firefox\" browser",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://www.ebay.com/\"",
+                  "offset": 7
+                },
+                {
+                  "val": "\"Firefox\"",
+                  "offset": 34
+                }
+              ],
+              "location": "HomePageSteps.i_open_in_browser(String,String)"
+            },
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ebay"
+          },
+          {
+            "name": "@all"
+          }
+        ]
+      }
+    ],
+    "name": "Search product",
+    "description": "",
+    "id": "search-product",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/myFirstTest.feature",
+    "tags": []
+  }
+]

@@ -1,6 +1,6 @@
-Feature: Search product in Aliexpress
+Feature: Search product
 
-  @aliexpress
+  @aliexpress @all
   Scenario: Search a product in Aliexpress
     Given I open "https://www.aliexpress.com/" in "Firefox" browser
     Then Home page should be displayed
@@ -11,3 +11,7 @@ Feature: Search product in Aliexpress
     When I login with user "delmer176@gmail.com" and password "Universitario1924"
     Then user "Delmer Espinoza Vigo" should be logged in
     
+    
+  @ebay @all
+  Scenario: Search a product in eBay
+    Given I open "https://www.ebay.com/" in "Firefox" browser
