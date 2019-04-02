@@ -8,36 +8,31 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends PageObject{
 
+	private By couponPopUp = By.xpath("//div[normalize-space(@class)='ui-window-content']");
+	private By closeCouponPopUp = By.xpath("//div[normalize-space(@class)='ui-window-content']/a[normalize-space(@class)='close-layer']");
+	private By signInLink = By.xpath("//a[normalize-space(text())='Sign In']");
+	private By signInButton = By.xpath("//a[normalize-space(@class)='sign-btn']");
+	
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
 		wait.until(ExpectedConditions.titleContains("AliExpress.com"));
 	}
 	
-	private WebElement couponPopUp = driver.findElement(By.xpath("//div[normalize-space(@class)='ui-window-content']"));
-	private WebElement closeCouponPopUp = driver.findElement(By.xpath("//div[normalize-space(@class)='ui-window-content']/a[normalize-space(@class)='close-layer']"));
-	private WebElement signInLink = driver.findElement(By.xpath("//a[normalize-space(text())='Sign In']"));
-	private WebElement signInButton = driver.findElement(By.xpath("//a[normalize-space(@class)='sign-btn']"));
-	
 	public boolean isCouponPopUpDisplayed() {
-		try {
-			wait.until(ExpectedConditions.visibilityOf(couponPopUp));
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		return couponPopUp.isDisplayed();
+		return isElementDisplayed(couponPopUp);
 	}
 	
 	public void closeCouponPopUp() {
-		wait.until(ExpectedConditions.visibilityOf(closeCouponPopUp));
-		closeCouponPopUp.click();
+		waitAndClick(closeCouponPopUp);
 	}
 	
-	public void clickOnSignInButton() {
-		wait.until(ExpectedConditions.visibilityOf(signInLink));
-		Actions action = new Actions(driver);
-		action.moveToElement(signInLink).perform();
-		wait.until(ExpectedConditions.visibilityOf(signInButton));
-		signInButton.click();
+	public LoginPage clickOnSignInButton() {
+		
+		hoverElement(signInLink);
+		waitAndClick(signInButton);
+		
+		return new LoginPage(driver);
 	}
 	
 	

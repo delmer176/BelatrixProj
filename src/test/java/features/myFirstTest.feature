@@ -12,6 +12,6 @@ Feature: Search product
     Then user "Delmer Espinoza Vigo" should be logged in
     
     
-  @ebay @all
+  @ebay @all @noSteps
   Scenario: Search a product in eBay
     Given I open "https://www.ebay.com/" in "Firefox" browser

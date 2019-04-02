@@ -7,37 +7,36 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends PageObject {
 
+	private By account = By.xpath("//input[normalize-space(@id)='fm-login-id']");
+	private By password = By.xpath("//input[normalize-space(@id)='fm-login-password']");
+	private By signInButton = By.xpath("//input[normalize-space(@id)='fm-login-submit']");
+	private By loginForm = By.xpath("//div[normalize-space(@id)='signInField']");
+	private String loginFrameID = "alibaba-login-box";
+	
+	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		wait.until(ExpectedConditions.urlContains("login.aliexpress.com"));
 	}
 	
-	private WebElement account = driver.findElement(By.xpath("//input[normalize-space(@id)='fm-login-id']"));
-	private WebElement password = driver.findElement(By.xpath("//input[normalize-space(@id)='fm-login-password']"));
-	private WebElement signInButton = driver.findElement(By.xpath("//input[normalize-space(@id)='fm-login-submit']"));
-	private WebElement loginForm = driver.findElement(By.xpath("//div[normalize-space(@id)='signInField']"));
+	public void switchToLoginFrame() {
+		switchToFrame(loginFrameID);
+	}
 	
 	public boolean isCorrectlyDisplayed() {
-		try {
-			wait.until(ExpectedConditions.visibilityOf(loginForm));
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		return loginForm.isDisplayed();
+		return isElementDisplayed(loginForm);
 	}
 	public void setAccount(String user) {
-		wait.until(ExpectedConditions.visibilityOf(account));
-		account.sendKeys(user);
+		waitClearAndSet(account, user); 
 	}
 	
 	public void setPassword(String pwd) {
-		wait.until(ExpectedConditions.visibilityOf(password));
-		password.sendKeys(pwd);
+		waitClearAndSet(password, pwd);
 	}
 	
-	public void clickOnSignInButton() {
-		wait.until(ExpectedConditions.visibilityOf(signInButton));
-		signInButton.click();
+	public HomePage clickOnSignInButton() {
+		waitAndClick(signInButton);
+		return new HomePage(driver);
 	}
 
 }
