@@ -24,7 +24,6 @@ public class PageObject {
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(by)));
 		} catch (Exception e) {
 			isDisplayed = false;
-			//System.out.println(e);
 		}
 		return isDisplayed;
 	}

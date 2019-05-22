@@ -6,9 +6,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/features/myFirstTest.feature"
+		features = "src/test/java/features/ebayTest.feature"
 		,glue= {"steps"}
-		,tags={"@aliexpress"}
+		,tags={"@ebay"}
 		,plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber-json-report.json" }
 		)
 

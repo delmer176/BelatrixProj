@@ -2,11 +2,12 @@ package steps;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-
+import apis.APITesting;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -17,6 +18,16 @@ public class HomePageSteps extends MainSteps {
 	
 	private HomePage homePage;
 	private LoginPage loginPage;
+	private APITesting apiTesting;
+	
+	@After()
+	public void closeBrowser(Scenario scenario) {
+		if (scenario.isFailed()) {
+			byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+		    scenario.embed(screenshot, "image/png");
+		}
+	    driver.quit();
+	}
 	
 	
 	@Given("I open {string} in {string} browser")
@@ -53,6 +64,12 @@ public class HomePageSteps extends MainSteps {
 	@Then("user {string} should be logged in")
 	public void user_should_be_logged_in(String name) {
 	    // 
+	}
+	
+	@When("I get an ID using a rest service")
+	public void i_execute_any_rest_service() {
+	    apiTesting = new APITesting();
+	    System.out.println(apiTesting.getFirstID());
 	}
 
 }
