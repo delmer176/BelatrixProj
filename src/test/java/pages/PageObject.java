@@ -33,6 +33,11 @@ public class PageObject {
 		driver.findElement(by).click();
 	}
 	
+	public String getLocatorText(By by) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		return driver.findElement(by).getText().trim();
+	}
+	
 	public void waitClearAndSet(By by, String value) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		driver.findElement(by).clear(); 

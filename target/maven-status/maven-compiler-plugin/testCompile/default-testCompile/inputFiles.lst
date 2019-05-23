@@ -1,8 +1,7 @@
+C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\entities\Product.java
 C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\pages\PageObject.java
 C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\runners\RunnerTest.java
-C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\pages\HomePage.java
-C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\runners\SecondRunnerTest.java
-C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\steps\HomePageSteps.java
-C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\pages\LoginPage.java
+C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\steps\EbaySteps.java
 C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\steps\MainSteps.java
-C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\steps\LoginPageSteps.java
+C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\pages\SearchPage.java
+C:\Users\delme\eclipse-workspace\CucumberPO\src\test\java\pages\LandingPage.java

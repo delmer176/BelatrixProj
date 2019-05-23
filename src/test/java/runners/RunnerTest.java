@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features = "src/test/java/features/ebayTest.feature"
 		,glue= {"steps"}
-		,tags={"@ebay"}
+		,tags={"@spanish"}
 		,plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber-json-report.json" }
 		)
 
